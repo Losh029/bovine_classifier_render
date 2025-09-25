@@ -57,5 +57,8 @@ def upload(lang):
     return render_template("upload.html", lang=lang)
 
 if __name__ == "__main__":
-    # Use 0.0.0.0 for Render deployment
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=True)
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
+
+
