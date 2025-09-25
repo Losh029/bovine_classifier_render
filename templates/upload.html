@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload / Capture Image</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>🐄 Upload or Capture Image</h1>
+
+    <div class="card">
+        <h2>Upload Image</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*">
+            <button type="submit" class="btn">Predict</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Capture from Camera</h2>
+        <video id="video" autoplay></video><br>
+        <button id="snap" class="btn">Capture & Predict</button>
+        <canvas id="canvas" style="display:none;"></canvas>
+
+        <form method="POST" id="cameraForm">
+            <input type="hidden" name="camera_image" id="camera_image">
+        </form>
+    </div>
+</div>
+
+<script>
+navigator.mediaDevices.getUserMedia({video:true})
+.then(stream => {document.getElementById('video').srcObject = stream;});
+
+document.getElementById('snap').addEventListener('click', function(){
+    var canvas = document.getElementById('canvas');
+    var video = document.getElementById('video');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext('2d').drawImage(video,0,0);
+    var dataURL = canvas.toDataURL('image/jpeg');
+    document.getElementById('camera_image').value = dataURL;
+    document.getElementById('cameraForm').submit();
+});
+</script>
+</body>
+</html>

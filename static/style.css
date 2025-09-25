@@ -1,0 +1,114 @@
+/* ---------- Global ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f6fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    width: 90%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* ---------- Headings ---------- */
+h1 {
+    color: #2f3640;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.result-card {
+    padding: 30px;
+}
+
+/* ---------- Inputs ---------- */
+input[type="file"], select {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
+input[type="file"]:focus, select:focus {
+    outline: none;
+    border-color: #0984e3;
+    box-shadow: 0 0 5px rgba(9,132,227,0.5);
+}
+
+/* ---------- Buttons ---------- */
+button.btn, a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+button.btn:hover, a.btn:hover {
+    background: #74b9ff;
+}
+
+/* ---------- Images ---------- */
+.result-img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ---------- Video / Camera ---------- */
+video {
+    border-radius: 12px;
+    max-width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+/* ---------- Text ---------- */
+p {
+    font-size: 16px;
+    color: #2d3436;
+    line-height: 1.5;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    .container {
+        width: 95%;
+    }
+
+    input[type="file"], select {
+        width: 100%;
+    }
+
+    .result-img, video {
+        width: 100%;
+    }
+}

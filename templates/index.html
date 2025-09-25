@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Language</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>🐄 Indian Bovine Breed Classifier</h1>
+    <div class="card">
+        <h2>Select Your Language</h2>
+        <form method="POST">
+            <select name="language">
+                <option value="en">English</option>
+                <option value="ta">Tamil</option>
+                <option value="hi">Hindi</option>
+            </select>
+            <button type="submit" class="btn">Proceed</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
